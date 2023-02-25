@@ -1,0 +1,275 @@
+body,
+html {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+.background {
+    background-color: hsl(0, 0%, 75%);
+    height: 50%;
+    width: 25%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    mix-blend-mode: difference;
+    backdrop-filter: blur(8px);
+    transform: translateX(-50%) translatey(-50%);
+
+}
+
+main {
+    background: hsl(0, 0%, 15%);
+    height: 100%;
+    padding: 24px;
+    display: flex;
+    align-content: center;
+}
+
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.container img {
+    width: 100%;
+    object-fit: contain;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    mix-blend-mode: difference;
+}
+
+.expanded {
+    display: none;
+}
+
+.regular {
+    display: none;
+}
+
+.narrow {
+    display: none;
+}
+
+.ex-narrow {
+    display: none;
+}
+
+.ex-ex-narrow {
+    display: none;
+}
+
+.grain {
+    background-color: hsl(157, 40%, 81%);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 120vw;
+    height: 120vw;
+    transform: translateX(-50%) translatey(-50%);
+
+    mix-blend-mode: soft-light;
+}
+
+.grain::after {
+    content: "";
+    background-image: url('./assets/grain.png');
+    position: fixed;
+    width: 120vw;
+    height: 120vw;
+    /* transform: translateX(-50%) translatey(-50%); */
+    mix-blend-mode: soft-light;
+    opacity: 50%;
+    animation: rotate 0.7s linear infinite alternate;
+
+
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(-5%) translateY(-50%);
+    }
+
+    100% {
+        transform: translateX(5%) translateY(-50%);
+    }
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@media screen and (max-width:1800px) {
+    .expanded {
+        display: block;
+    }
+
+    .regular {
+        display: none;
+    }
+
+    .narrow {
+        display: none;
+    }
+
+    .ex-narrow {
+        display: none;
+    }
+
+    .ex-ex-narrow {
+        display: none;
+    }
+
+    .grain {
+        background-color: hsl(157, 40%, 81%);
+    }
+
+}
+
+@media screen and (max-width:1600px) {
+    .expanded {
+        display: none;
+    }
+
+    .regular {
+        display: block;
+    }
+
+    .narrow {
+        display: none;
+    }
+
+    .ex-narrow {
+        display: none;
+    }
+
+    .ex-ex-narrow {
+        display: none;
+    }
+
+    .grain {
+        background-color: hsl(157, 40%, 81%);
+    }
+}
+
+@media screen and (max-width:900px) {
+    .expanded {
+        display: none;
+    }
+
+    .regular {
+        display: none;
+    }
+
+    .narrow {
+        display: block;
+        animation: shake 0.5s infinite ease-in-out;
+        animation-direction: alternate;
+    }
+
+    .ex-narrow {
+        display: none;
+    }
+
+    .ex-ex-narrow {
+        display: none;
+    }
+
+    .grain {
+        width: 140vw;
+        height: 140vw;
+        background-color: hsl(211, 40%, 81%);
+    }
+
+    .grain::after {
+        width: 140vw;
+        height: 140vw;
+    }
+
+}
+
+@media screen and (max-width:640px) {
+    .expanded {
+        display: none;
+    }
+
+    .regular {
+        display: none;
+    }
+
+    .narrow {
+        display: none;
+    }
+
+    .ex-narrow {
+        display: block;
+        animation: shake 0.25s infinite ease-in-out;
+        animation-direction: alternate;
+    }
+
+    .ex-ex-narrow {
+        display: none;
+    }
+
+    .grain {
+        width: 120vh;
+        height: 120vh;
+        background-color: hsl(266, 40%, 81%);
+
+    }
+
+    .grain::after {
+        width: 120vh;
+        height: 120vh;
+    }
+
+}
+
+@media screen and (max-width:300px) {
+    .expanded {
+        display: none;
+    }
+
+    .regular {
+        display: none;
+    }
+
+    .narrow {
+        display: none;
+    }
+
+    .ex-narrow {
+        display: none;
+    }
+
+    .ex-ex-narrow {
+        display: block;
+        animation: shake 0.1s infinite ease-in-out;
+        animation-direction: alternate;
+    }
+
+    .grain {
+        width: 120vh;
+        height: 120vh;
+        background-color: hsl(0, 93%, 78%);
+
+    }
+
+    .grain::after {
+        width: 120vh;
+        height: 120vh;
+    }
+
+
+}
